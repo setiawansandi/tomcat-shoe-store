@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 
     private String html2 = """
                             <a href="#!" class="forgot-password-link">Forgot password?</a>
-                            <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a>
+                            <p class="login-card-footer-text">Don't have an account? <a href="register" class="text-reset">Register here</a>
                             </p>
                             <nav class="login-card-footer-nav">
                             <a href="#!">Terms of use</a>
@@ -156,6 +156,8 @@ public class LoginServlet extends HttpServlet {
             out.println("<p>Check Tomcat console for details.</p>");
             ex.printStackTrace();
         }
+
+        out.close();
     }
 
 }

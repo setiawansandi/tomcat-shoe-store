@@ -27,7 +27,6 @@ function validateForm() {
   return true;
 }
 
-
 function validateFormReg() {
   var fname = document.getElementById("firstName").value;
   var email = document.getElementById("email").value;
