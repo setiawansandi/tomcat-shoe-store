@@ -10,7 +10,7 @@ public class HomeServlet extends HttpServlet {
 		<!DOCTYPE HTML>
 		<html>
 		  <head>
-			<title>Footwear - Free Bootstrap 4 Template by Colorlib</title>
+			<title>Home</title>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
@@ -46,7 +46,7 @@ public class HomeServlet extends HttpServlet {
 					<div class="row">
 					  <div class="col-sm-7 col-md-9">
 						<div id="colorlib-logo">
-						  <a href="index.html">Solely</a>
+						  <a href="home">Solely</a>
 						</div>
 					  </div>
 					  <div class="col-sm-5 col-md-3">
@@ -64,13 +64,13 @@ public class HomeServlet extends HttpServlet {
 					  <div class="col-sm-12 text-left menu-1">
 						<ul>
 						  <li class="active">
-							<a href="index.html">Home</a>
+							<a href="home">Home</a>
 						  </li>
 						  <li class="has-dropdown">
-							<a href="men.html">Men</a>
+							<a href="men">Men</a>
 						  </li>
 						  <li>
-							<a href="women.html">Women</a>
+							<a href="women">Women</a>
 						  </li>
 						  <li>
 							<a href="about.html">About</a>
@@ -79,8 +79,8 @@ public class HomeServlet extends HttpServlet {
 							<a href="contact.html">Contact</a>
 						  </li>
 						  <li class="cart">
-							<a href="cart.html">
-							  <i class="icon-shopping-cart"></i> Cart [0] </a>
+							<a href="cart">
+							  <i class="icon-shopping-cart"></i></a>
 						  </li>
 			""";
 
@@ -485,7 +485,7 @@ public class HomeServlet extends HttpServlet {
 					<div class="container">
 					  <div class="row row-pb-md">
 						<div class="col footer-col colorlib-widget">
-						  <h4>About Footwear</h4>
+						  <h4>About Solely</h4>
 						  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
 						  <p>
 						  <ul class="colorlib-social-icons">
@@ -654,7 +654,7 @@ public class HomeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();  // throw IOException
 
 		HttpSession session=request.getSession(false);  
-        if(session!=null){ // if session exist
+        if(session!=null && !session.getAttribute("id").equals("000")){ // if session exist
 			out.println(html1);
 
 			String name=(String)session.getAttribute("name"); 
@@ -666,5 +666,7 @@ public class HomeServlet extends HttpServlet {
 			out.println("<li class='cart'><a href='login'>Login/Register</a></li>");
 			out.println(html2);
 		}
+
+		out.close();
    }
 }
